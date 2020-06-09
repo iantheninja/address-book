@@ -81,6 +81,12 @@ function attachContactListeners() {
     });
 };
 
+$("#buttons").on("click", ".deleteButton", function() {
+    addressBook.deleteContact(this.id);
+    $("#show-contact").hide();
+    displayContactDetails(addressBook);
+});
+
 /* Form submission block */
 $(document).ready(function() {
     attachContactListeners();
